@@ -22,7 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentOnAttachListener;
 
-import com.example.sceneformvideotexturetest.databinding.ActivityMainBinding;
+import com.example.sceneformvideotexturetest.databinding.ActivityAugmentedDefaultBinding;
 import com.google.android.filament.Engine;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.AugmentedImageDatabase;
@@ -58,7 +58,7 @@ import java.util.concurrent.CompletableFuture;
 public class AugmentedImage extends AppCompatActivity implements
         FragmentOnAttachListener, BaseArFragment.OnSessionConfigurationListener {
 
-    private ActivityMainBinding binding;
+    private ActivityAugmentedDefaultBinding binding;
     private MediaPlayer mediaPlayer;
     private ArFragment arFragment;
     private AugmentedImageDatabase database;
@@ -73,7 +73,7 @@ public class AugmentedImage extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityAugmentedDefaultBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
@@ -102,7 +102,7 @@ public class AugmentedImage extends AppCompatActivity implements
             loadMatrixMaterial();
         }
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.sintel);
+        mediaPlayer = MediaPlayer.create(this, R.raw.profil_ukdw);
         mediaPlayer.setLooping(true);
     }
 

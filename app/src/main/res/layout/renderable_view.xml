@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="580dp"
+    android:layout_height="360dp"
     android:background="@drawable/rounded_bg"
     android:clipChildren="false"
     android:clipToPadding="false"
     android:gravity="center"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="24dp">
 
     <TextView
         android:id="@+id/rotationHeader"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="This is text"
+        android:text="this is text!"
         android:textAlignment="center" />
 
     <ImageButton
@@ -23,5 +23,10 @@
         android:layout_height="50dp"
         android:importantForAccessibility="no"
         android:src="@android:drawable/ic_dialog_info" />
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

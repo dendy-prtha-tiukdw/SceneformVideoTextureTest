@@ -4,6 +4,8 @@ package com.example.sceneformvideotexturetest;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -50,6 +52,22 @@ public class AugmentedImageRenderable extends AppCompatActivity {
                     renderable.setShadowCaster(false);
                     renderable.setShadowCaster(false);
 
+                    WebView webView = renderable.getView().findViewById(R.id.webview);
+                    webView.getSettings().setJavaScriptEnabled(true);
+                    String myYouTubeVideoUrl = "https://www.youtube.com/embed/THMV-qWlMIU";
+                    String dataUrl =
+                            "<html>" +
+                                    "<body>" +
+                                    "<h2>Video From YouTube</h2>" +
+                                    "<br>" +
+                                    "<iframe width=\"560\" height=\"315\" src=\""+myYouTubeVideoUrl+"\" frameborder=\"0\" allowfullscreen/>" +
+                                    "</body>" +
+                                    "</html>";
+                    webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+                    webView.getSettings().setLoadWithOverviewMode(true);
+                    webView.getSettings().setUseWideViewPort(true);
+//                    webView.loadData(dataUrl, "text/html", "utf-8");
+                    webView.loadUrl("https://www.ukdw.ac.id/akademik/fakultas-teknologi-informasi/");
                     renderable.getView().findViewById(R.id.info_button).setOnClickListener(view -> {
                         Log.d("info_button", "info_button: pressed");
                     });
